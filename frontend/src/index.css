@@ -2,7 +2,13 @@ main {
   min-height: 80vh;
 }
 
+h3{
+  margin: 1rem 0;
+}
 
+.rating span {
+  margin: 0.1rem
+}
 
 
 
