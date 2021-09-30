@@ -119,7 +119,7 @@ const CartScreen = ({match, location, history}) => {
     </>
   )
 
-  return <div>Cart</div>
+  // return <div>Cart</div>
 }
 
 export default CartScreen
