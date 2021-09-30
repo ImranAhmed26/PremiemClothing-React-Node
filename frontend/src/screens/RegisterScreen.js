@@ -43,7 +43,7 @@ const RegisterScreen = ({location, history}) => {
       {error && <Message variant='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId='name'>
+        <Form.Group controlId='name'className=' mb-3'>
           <Form.Label>Name </Form.Label>
           <Form.Control
             type='name'
@@ -53,7 +53,7 @@ const RegisterScreen = ({location, history}) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='email'>
+        <Form.Group controlId='email' className=' my-3'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
@@ -63,7 +63,7 @@ const RegisterScreen = ({location, history}) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group controlId='password' className=' my-3'>
           <Form.Label>Password</Form.Label>
           <Form.Control
             type='password'
@@ -82,12 +82,12 @@ const RegisterScreen = ({location, history}) => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-{/* className='btn btn-light my-3 */}
-        <Button type='submit' variant='primary' className='btn my-3' >
+
+        <Button type='submit' variant='primary' className=' my-3' >
           Register
         </Button>
+        
       </Form>
-
       <Row>
         <Col>
           Have an Account?{' '}
