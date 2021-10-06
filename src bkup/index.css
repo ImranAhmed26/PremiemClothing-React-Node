@@ -1,0 +1,60 @@
+main {
+  min-height: 80vh;
+}
+
+h3{
+  margin: 1rem 0;
+}
+
+.rating span {
+  margin: 0.1rem
+}
+
+h2{
+  font-size: 1.4rem;
+  padding:0.2rem ;
+}
+
+/* button:focus {
+  box-shadow: none !important;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OLD CONTENT */
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */

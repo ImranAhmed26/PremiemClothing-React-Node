@@ -11,25 +11,24 @@ const ShippingScreen = ({history}) => {
 
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber)
-  // const [country, setCountry] = useState(shippingAddress.country)
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+  // const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber)
+  const [country, setCountry] = useState(shippingAddress.country)
 
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(saveShippingAddress({address, city, phoneNumber
-      // , country
-    }))
-    history.push('/placeOrder')
+    dispatch(saveShippingAddress({address, city, postalCode, country}))
+    history.push('/payment')
   }
 
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h2 className='mb-3'>Shipping</h2>
       <Form onSubmit={submitHandler}>
-        <Form.Group controlId='address' className='mt-3'>
+        <Form.Group controlId='address' className='mb-3'>
           <Form.Label>Address</Form.Label>
           <Form.Control
             type='text'
@@ -40,41 +39,50 @@ const ShippingScreen = ({history}) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='city' className='mt-3'>
+        <Form.Group controlId='city' className='mb-3'>
           <Form.Label>City</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter city'
+            placeholder='Enter City'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='phoneNumber' className='mt-3'>
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control
-            type='number'
-            placeholder='Enter Phone Number'
-            value={phoneNumber}
-            required
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-
-        {/* <Form.Group controlId='country' className='mt-3'>
+        <Form.Group controlId='country' className='mb-3'>
           <Form.Label>Country</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter country'
+            placeholder='Bangladesh'
             value={country}
-            required
             onChange={(e) => setCountry(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId='postalCode' className='mb-3'>
+          <Form.Label>Postal Code</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='enter postal code '
+            value={postalCode}
+            required
+            onChange={(e) => setPostalCode(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        {/* 
+        <Form.Group controlId='phoneNumber' className='mb-3'>
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control
+            type='number'
+            placeholder='Enter Phone Number '
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           ></Form.Control>
         </Form.Group> */}
 
-        <Button type='submit' variant='primary' className='mt-3'>
-          Continue
+        <Button type='submit' variant='primary'>
+          continue{' '}
         </Button>
       </Form>
     </FormContainer>
