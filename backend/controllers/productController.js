@@ -6,7 +6,16 @@ import Product from '../models/productModel.js'
 // @access Public..
 
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({})
+  const keyword = req.query.keyword
+    ? {
+        name: {
+          $regex: req.query.keyword,
+          $options: 'i',
+        },
+      }
+    : {}
+
+  const products = await Product.find({...keyword})
 
   res.json(products)
 })
@@ -87,4 +96,10 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 })
 
-export {getProducts, getProductById, deleteProduct, createProduct, updateProduct}
+export {
+  getProducts,
+  getProductById,
+  deleteProduct,
+  createProduct,
+  updateProduct,
+}
